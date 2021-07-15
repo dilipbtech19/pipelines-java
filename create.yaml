@@ -5,3 +5,13 @@ jobs:
 - job: One
   steps:
   - script: echo First step!
+trigger:
+  batch: true
+  branches:
+    include:
+    - master/*
+    exclude:
+    - master/experimental/*
+  paths:
+    exclude:
+    - README.md
